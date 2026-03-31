@@ -1,3 +1,3 @@
 None of these files are confirmed to be authentic, this is simply an archive of files I’ve collected.
 
-exept vesc2g3, cr: Finn
+vesc2g3 fiels are not up to date
