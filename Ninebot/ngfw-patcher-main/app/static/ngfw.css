@@ -1,0 +1,559 @@
+:root {
+    --primary-color: #00e6b8;  /* Cyan-ish teal - modern, tech feel */
+    --primary-hover: #00b392;  /* Darker shade for hover */
+    --bg-dark: #1a1a1a;
+    --bg-darker: #141414;
+    --bg-card: #2a2a2a;
+    --text-color: #e0e0e0;
+    --border-color: #333;
+    --glow-shadow: 0 0 10px rgba(0,230,184,0.3);  /* Match primary color */
+}
+
+/* Global styles */
+body {
+    background: var(--bg-dark);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header & Title */
+.display-1 {
+    color: var(--primary-color);
+    text-shadow: var(--glow-shadow);
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+/* Cards */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+/* Make only the header look clickable */
+.card-header {
+    background: var(--bg-darker);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 7px 7px 0 0;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.card-header:hover {
+    background: var(--bg-card);
+}
+
+/* Add a subtle indicator that the header is clickable */
+.card-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,230,184,0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.card-header:hover::after {
+    opacity: 1;
+}
+
+/* Style for checked cards */
+.card.checked {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0,230,184,0.2);
+}
+
+/* Prevent text selection on card click */
+.card-header label {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Make sure checkbox stays clickable */
+.form-check-input {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Form Elements */
+.form-control, .form-select {
+    background: var(--bg-darker);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.form-control:focus, .form-select:focus {
+    background: var(--bg-darker);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+    box-shadow: var(--glow-shadow);
+}
+
+/* Add styles for text inputs */
+input[type="text"] {
+    background: var(--bg-darker) !important;
+    color: var(--text-color) !important;
+}
+
+/* Add styles for links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--primary-hover);
+    text-shadow: var(--glow-shadow);
+    text-decoration: none;
+}
+
+/* Custom file input */
+.custom-file-input {
+    background: var(--bg-darker);
+    color: var(--text-color);
+    border: 1px dashed var(--border-color);
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.custom-file-input:hover {
+    border-color: var(--primary-color);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: black;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--glow-shadow);
+}
+
+.btn-secondary {
+    background: var(--bg-darker);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: #404040;
+}
+
+/* Sliders */
+.form-range {
+    height: 6px;
+    border-radius: 3px;
+}
+
+.form-range::-webkit-slider-thumb {
+    background: var(--primary-color);
+    border: 2px solid var(--bg-darker);
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.form-range::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: var(--glow-shadow);
+}
+
+.form-range::-webkit-slider-runnable-track {
+    background: var(--bg-darker);
+    border-radius: 3px;
+    height: 6px;
+}
+
+/* Add Firefox support */
+.form-range::-moz-range-thumb {
+    background: var(--primary-color);
+    border: 2px solid var(--bg-darker);
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Add MS support */
+.form-range::-ms-thumb {
+    background: var(--primary-color);
+    border: 2px solid var(--bg-darker);
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Update hover effects */
+.form-range::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: var(--glow-shadow);
+}
+
+.form-range::-moz-range-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: var(--glow-shadow);
+}
+
+.form-range::-ms-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: var(--glow-shadow);
+}
+
+/* Update track color */
+.form-range::-webkit-slider-runnable-track {
+    background: var(--bg-darker);
+    border-radius: 3px;
+    height: 6px;
+}
+
+.form-range::-moz-range-track {
+    background: var(--bg-darker);
+    border-radius: 3px;
+    height: 6px;
+}
+
+.form-range::-ms-track {
+    background: var(--bg-darker);
+    border-radius: 3px;
+    height: 6px;
+}
+
+/* Modal */
+.modal-content {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Badges */
+.badge {
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.badge.bg-success {
+    background: var(--primary-color) !important;
+    color: black;
+}
+
+/* Footer */
+footer {
+    background: var(--bg-darker);
+    border-top: 1px solid var(--border-color);
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+footer a:hover {
+    color: var(--primary-hover);
+    text-shadow: var(--glow-shadow);
+}
+
+/* Input groups */
+.input-group-text {
+    background: var(--bg-darker);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+/* Checkbox styling */
+.form-check-input {
+    background-color: var(--bg-darker);
+    border: 1px solid var(--border-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--glow-shadow);
+}
+
+/* Warning text */
+.text-danger {
+    color: #ff4444 !important;
+}
+
+/* Animations */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(0,230,184,0.2); }
+    50% { box-shadow: 0 0 20px rgba(0,230,184,0.4); }
+    100% { box-shadow: 0 0 5px rgba(0,230,184,0.2); }
+}
+
+.glow-effect {
+    animation: glow 2s infinite;
+}
+
+/* Update card group spacing */
+.card-group {
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Credits section styling */
+.credits-section {
+    background: var(--bg-darker);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.credits-section h4 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.credits-section p {
+    margin-bottom: 0.5rem;
+}
+
+/* Improve spacing for form sections */
+.form-section {
+    margin-bottom: 2rem;
+}
+
+.form-section h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Update hr styling */
+hr {
+    width: 60%;
+    margin: 2rem auto;
+    opacity: 0.5;
+    height: 2px;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        rgba(0,230,184,0.8) 20%, 
+        rgba(0,230,184,0.8) 80%,
+        transparent
+    );
+    border: none;
+}
+
+/* Add a subtle glow effect */
+hr::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: inherit;
+    filter: blur(2px);
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+
+/* Add these styles for the preset section */
+.preset-section {
+    background: var(--bg-darker);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.preset-section h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.preset-section h5 i {
+    font-size: 1.2em;
+}
+
+/* Style the select dropdown */
+.preset-select {
+    position: relative;
+    width: 100%;
+}
+
+.preset-select select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    cursor: pointer;
+    appearance: none;
+    padding-right: 2.5rem;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+.preset-select::after {
+    content: '\f0d7';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    pointer-events: none;
+    transition: transform 0.2s ease;
+}
+
+.preset-select:hover::after {
+    transform: translateY(-50%) scale(1.2);
+}
+
+.preset-select select:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--glow-shadow);
+}
+
+.preset-select select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: var(--glow-shadow);
+}
+
+/* Style the options */
+.preset-select select option {
+    background: var(--bg-darker);
+    color: var(--text-color);
+    padding: 0.5rem;
+}
+
+/* Add to existing CSS */
+.section-container {
+    background: var(--bg-darker);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.section-container h5 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.section-container h5 i {
+    font-size: 1.2em;
+}
+
+/* Update card groups inside sections */
+.section-container .card-group {
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.section-container .card-group:last-child {
+    margin-bottom: 0;
+}
+
+/* Add to existing CSS */
+.btn-group.gap-2 {
+    display: flex;
+    gap: 0.5rem !important;
+}
+
+.btn-group.gap-2 .btn {
+    border-radius: 4px !important;
+    min-width: 100px;
+}
+
+.btn-group.gap-2 .btn:not(:last-child) {
+    margin-right: 0;
+}
+
+/* Add to existing section-container styles */
+.section-header {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-right: 1.5rem;
+}
+
+.section-header:hover {
+    color: var(--primary-hover);
+}
+
+.section-chevron {
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+    margin-top: 0.2em;
+    transform: rotate(0deg);
+}
+
+.section-header[aria-expanded="true"] .section-chevron {
+    transform: rotate(180deg);
+}
+
+/* Add subtle animation for collapse */
+.collapse {
+    transition: all 0.2s ease;
+}
+
+.collapsing {
+    transition: all 0.2s ease;
+}
+
+/* Keep section headers consistent */
+.section-container h5.section-header {
+    margin-bottom: 0;
+    padding-bottom: 1.5rem;
+}
+
+.section-container h5.section-header[aria-expanded="true"] {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0;
+} 
