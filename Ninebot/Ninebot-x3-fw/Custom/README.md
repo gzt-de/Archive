@@ -1,16 +1,24 @@
 ## File Status
 
 - **GT3-dash.zip**  
-  Info: GT3 dash For G3 and F3 (F3 only if running g3 Fw).
-  Status: Functional, based on limited testing (verified on one F3).
+  Info: GT3 dash For G3 and F3 (F3 only if running G3 Fw).
+  Status: Functional.
 
 - **g3_parte0g.zip**  
   Info: Ghost Fw by myth.
-  Status: Untested.
+  Status: Functional.
 
 - **zt3_parte0g.zip**  
   Info: Ghost Fw by myth.
-  Status: Functional, based on limited testing (verified on two ZT3).
+  Status: Functional.
+
+- **G3_FWK_v1.zip**  
+  Info: Standart Field weakening increased.
+  Status: Functional.
+
+- **G3_FWK_v2.zip**  
+  Info: Not available to download since it will destroy the MCU.
+  Status: Functional but not for continuous use.
 
 ---
 
